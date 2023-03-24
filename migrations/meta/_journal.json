@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1679663367441,
+      "tag": "0000_gifted_moon_knight",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1679670822160,
+      "tag": "0001_wide_iron_fist",
+      "breakpoints": false
+    }
+  ]
+}

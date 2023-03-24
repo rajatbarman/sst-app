@@ -1,0 +1,33 @@
+{
+  "name": "sst-org-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sst dev",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "console": "sst console",
+    "gen:migrations": "drizzle-kit generate:mysql --out migrations --schema packages/core/db/schema.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "aws-cdk-lib": "2.62.2",
+    "constructs": "10.1.156",
+    "sst": "^2.2.6",
+    "typescript": "^5.0.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@planetscale/database": "^1.6.0",
+    "drizzle-kit": "^0.17.0",
+    "drizzle-orm": "^0.22.0",
+    "kysely": "^0.23.5",
+    "mysql2": "^2.3.3",
+    "undici": "^5.21.0"
+  }
+}
