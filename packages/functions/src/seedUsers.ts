@@ -1,6 +1,5 @@
-import {db} from '@sst-org-app/core/db'
-import { Time } from "@sst-org-app/core/time";
-import seedUsers from '@sst-org-app/core/seed/users'
+import {db} from 'core/db/index'
+import seedUsers from '../../core/seed/users'
 
 export const handler = async () => {
   try {

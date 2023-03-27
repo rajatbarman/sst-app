@@ -1,7 +1,7 @@
 import { ApiHandler } from "sst/node/api";
-import {db} from '@sst-org-app/core/db'
+import {db} from '../../core/db/index'
 import { Time } from "@sst-org-app/core/time";
-import { users } from '@sst-org-app/core/db/schema';
+import { users } from '../../core/db/schema';
 
 export const handler = ApiHandler(async (_evt) => {
   const allUsers = await db.select().from(users)
