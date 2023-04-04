@@ -1,10 +1,10 @@
 import { StackContext, NextjsSite, use } from 'sst/constructs';
 import { API } from './API';
 
-export function Frontend({ stack, app }: StackContext) {
+export function Frontend({ stack }: StackContext) {
   const { api } = use(API);
   const site = new NextjsSite(stack, "Site", {
-    path: "packages/sst-frontend-nextjs",
+    path: "packages/frontend",
     environment: {
       NEXT_PUBLIC_API_HOST: api.url,
     }

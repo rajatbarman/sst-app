@@ -1,6 +1,8 @@
 import { SSTConfig } from "sst";
 import { API } from "./stacks/API";
 import { Frontend } from "./stacks/Frontend";
+import { Email } from "./stacks/Email";
+import { Secrets } from "./stacks/Secrets";
 
 export default {
   config(_input) {
@@ -10,6 +12,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(API).stack(Frontend);
-  }
+    app.stack(API).stack(Frontend).stack(Email);
+  },
 } satisfies SSTConfig;

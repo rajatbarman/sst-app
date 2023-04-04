@@ -4,7 +4,8 @@
     "module": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@sst-org-app/core/*": ["../core/src/*"]
-    }
+      "@core/*": ["../core/src/*"]
+    },
+    "strict": true
   }
 }

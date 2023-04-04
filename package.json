@@ -9,11 +9,12 @@
     "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
-    "gen:migrations": "drizzle-kit generate:mysql --out migrations --schema packages/core/db/schema.ts",
+    "migrations": "drizzle-kit generate:mysql --out migrations --schema packages/core/src/db/schema.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.15.10",
     "aws-cdk-lib": "2.62.2",
     "constructs": "10.1.156",
     "sst": "^2.2.6",
@@ -23,11 +24,13 @@
     "packages/*"
   ],
   "dependencies": {
+    "dayjs": "^1.11.7",
     "@planetscale/database": "^1.6.0",
-    "drizzle-kit": "^0.17.0",
-    "drizzle-orm": "^0.22.0",
-    "kysely": "^0.23.5",
+    "aws-sdk": "^2.1346.0",
+    "drizzle-kit": "^0.17.1",
+    "drizzle-orm": "^0.23.2",
     "mysql2": "^2.3.3",
-    "undici": "^5.21.0"
+    "undici": "^5.21.0",
+    "zod": "^3.21.4"
   }
 }
