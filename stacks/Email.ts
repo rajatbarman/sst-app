@@ -1,8 +1,8 @@
-import { StackContext, Function } from "sst/constructs";
+import { StackContext, Function } from 'sst/constructs';
 export function Email({ stack }: StackContext) {
-  const fn = new Function(stack, "SendEmail", {
-    handler: "packages/functions/src/sendEmail.handler",
+  const fn = new Function(stack, 'SendEmail', {
+    handler: 'packages/functions/src/sendEmail.handler',
   });
 
-  fn.attachPermissions(["ses"])
+  fn.attachPermissions(['ses']);
 }

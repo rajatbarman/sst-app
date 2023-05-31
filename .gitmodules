@@ -1,3 +1,0 @@
-[submodule "packages/sst-frontend-nextjs"]
-	path = packages/sst-frontend-nextjs
-	url = https://github.com/rajatbarman/sst-frontend-nextjs.git

@@ -12,6 +12,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(API).stack(Frontend).stack(Email);
+    app.stack(API).stack(Frontend);
   },
 } satisfies SSTConfig;

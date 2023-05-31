@@ -2,7 +2,6 @@
   "name": "sst-org-app",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "sst dev",
     "build": "sst build",
@@ -17,18 +16,18 @@
     "@types/node": "^18.15.10",
     "aws-cdk-lib": "2.62.2",
     "constructs": "10.1.156",
-    "sst": "^2.2.6",
+    "drizzle-kit": "^0.18.1",
+    "sst": "^2.11.1",
     "typescript": "^5.0.2"
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "dayjs": "^1.11.7",
-    "@planetscale/database": "^1.6.0",
+    "@neondatabase/serverless": "^0.4.9",
     "aws-sdk": "^2.1346.0",
-    "drizzle-kit": "^0.17.1",
-    "drizzle-orm": "^0.23.2",
+    "dayjs": "^1.11.7",
+    "drizzle-orm": "^0.26.3",
     "mysql2": "^2.3.3",
     "undici": "^5.21.0",
     "zod": "^3.21.4"
