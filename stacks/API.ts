@@ -52,6 +52,18 @@ export function API({ stack }: StackContext) {
       },
       'POST /users': 'packages/functions/src/users/insertUser.handler',
       'GET /users': 'packages/functions/src/users/getUsers.handler',
+      'GET /buckets': {
+        function: {
+          handler: 'packages/functions/src/getBuckets.handler',
+          permissions: ['s3'],
+        },
+      },
+      'GET /upload-url': {
+        function: {
+          handler: 'packages/functions/src/getUploadUrl.handler',
+          permissions: ['s3'],
+        },
+      },
     },
   });
 
