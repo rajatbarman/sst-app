@@ -1,5 +1,6 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import styles from '../styles/Upload.module.css';
+import Link from 'next/link';
 
 interface Bucket {
   Name: string;
@@ -10,6 +11,7 @@ export default function Upload() {
   const [selectedBucket, setSelectedBucket] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [fileLink, setFileLink] = useState<string>('');
 
   useEffect(() => {
     const fetchBuckets = async () => {
@@ -37,6 +39,7 @@ export default function Upload() {
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setFileLink('');
     event.preventDefault();
 
     if (!file || !selectedBucket) {
@@ -50,7 +53,14 @@ export default function Upload() {
       const res = await fetch(
         `https://4aygeftyoc.execute-api.ap-south-1.amazonaws.com/upload-url?bucket=${selectedBucket}`,
       );
-      const { uploadURL, downloadURL } = await res.json();
+
+      const resp = await res.json();
+
+      const { uploadURL, downloadUrl } = resp.data;
+
+      console.log('uploadosdUrl', uploadURL);
+
+      console.log('downlosdUrl', downloadUrl);
 
       // Then, upload the file using the upload URL
       await fetch(uploadURL, {
@@ -60,8 +70,9 @@ export default function Upload() {
           'Content-Type': file.type,
         },
       });
+      setFileLink(downloadUrl);
 
-      alert(`File uploaded successfully. Download URL: ${downloadURL}`);
+      alert(`File uploaded successfully.`);
     } catch (err) {
       alert('Failed to upload file');
       console.error(err);
@@ -94,6 +105,7 @@ export default function Upload() {
         <button type="submit" disabled={uploading}>
           {uploading ? 'Uploading...' : 'Upload'}
         </button>
+        {fileLink && <a href={fileLink}>Your file Link</a>}
       </form>
     </div>
   );

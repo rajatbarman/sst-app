@@ -20,10 +20,11 @@ export const handler = ApiHandler(async (event) => {
   };
   try {
     const uploadURL = await s3.getSignedUrlPromise('putObject', uploadParams);
+    const downloadUrl = await s3.getSignedUrlPromise('getObject', uploadParams);
     return createAPIResponse({
       error: false,
       message: 'Success',
-      data: { url: uploadURL },
+      data: { uploadURL, downloadUrl },
     });
   } catch (error) {
     return createAPIResponse({
